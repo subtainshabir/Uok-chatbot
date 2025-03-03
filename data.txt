@@ -1,0 +1,9 @@
+University Name: University of Kotli. 
+this Chat bot is the data of assitant for univerisyt of Kotli
+
+Department:
+there are four faculties in this university.
+1. Faculty of computing and Engineering.
+2. Faculty of Basic and Applied Sciences.
+3. Faculty of Social Sciences and Humanities.
+4. Faculty of Management Sciences.

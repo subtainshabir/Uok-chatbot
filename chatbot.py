@@ -9,12 +9,24 @@ genai.configure(api_key=GEMINI_API_KEY)
 
 def call_gemini_api(prompt):
     """
-    Sends a prompt to Gemini API (gemini-2.0-flash) and returns the response.
+    Reads data from a text file, searches for relevant information, and 
+    sends the extracted data along with the prompt to the Gemini API.
     """
+    file_path = 'data.txt'
     try:
+        # Read the text file
+        with open(file_path, "r", encoding="utf-8") as file:
+            file_data = file.read()
+
+        # Combine the prompt with the file data
+        search_prompt = f"Based on the following data:\n{file_data}\n\nAnswer this query: {prompt}"
+        
+        # Call Gemini API
         model = genai.GenerativeModel("gemini-2.0-flash")
-        response = model.generate_content(prompt)
-        return response.text.strip() if response.text else "No response from AI."
+        response = model.generate_content(search_prompt)
+        
+        return response.text.strip() if response.text else "No relevant information found."
+    
     except Exception as e:
         return f"Error: {str(e)}"
 
