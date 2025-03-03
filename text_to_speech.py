@@ -5,7 +5,7 @@ import google.generativeai as genai  # Import Gemini API
 import pyttsx3  # Text-to-Speech library
 
 # Set up Google Gemini API key
-GEMINI_API_KEY = " "  # Replace with actual API key
+GEMINI_API_KEY = "AIzaSyBmaFiHkFbyNcb9VSJ_xM793m9qnCFlF_4"  # Replace with actual API key
 genai.configure(api_key=GEMINI_API_KEY)
 
 def call_gemini_api(prompt):
@@ -104,7 +104,7 @@ def open_speech_chatbot():
     # Create a new window for the speech chatbot
     speech_window = tk.Toplevel(root)
     speech_window.title("Speech Chatbot")
-    speech_window.geometry("500x450")
+    speech_window.geometry("500x400")
 
     # Prompt label and text area
     prompt_label = tk.Label(speech_window, text="Enter your prompt:")
